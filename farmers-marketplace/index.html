@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmers Marketplace</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Sidebar Navigation -->
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <h2>Farmers Market</h2>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a href="#">
+              <span class="icon material-icons">dashboard</span>
+              Your Market
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon material-icons">store</span>
+              My Listings
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon material-icons">shopping_cart</span>
+              Buy Seed
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon material-icons">shopping_cart</span>
+              Buy Fertilizers
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon material-icons">account_circle</span>
+              Profile
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="top-bar">
+          <button class="menu-toggle">
+            <span class="material-icons">menu</span>
+          </button>
+          <h1>Your Market</h1>
+        </header>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <button class="action-button sell">
+            <span class="action-icon material-icons">add_circle</span>
+            Sell Crops
+          </button>
+          <button class="action-button listings">
+            <span class="action-icon material-icons">list_alt</span>
+            View Listings
+          </button>
+          <button class="action-button sales">
+            <span class="action-icon material-icons">trending_up</span>
+            My Sales
+          </button>
+          <button class="action-button trends">
+            <span class="action-icon material-icons">insights</span>
+            Market Trends
+          </button>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Active Listings Card -->
+          <div class="card">
+            <h3>Active Listings</h3>
+            <div class="listing-wizard">
+              <div class="wizard-progress">
+                <div class="wizard-step completed">1</div>
+                <div class="wizard-step active">2</div>
+                <div class="wizard-step">3</div>
+              </div>
+              <div class="crop-grid">
+                <div class="crop-option selected">
+                  <span class="material-icons crop-icon">grass</span>
+                  <div>Rice</div>
+                </div>
+                <div class="crop-option">
+                  <span class="material-icons crop-icon">eco</span>
+                  <div>Wheat</div>
+                </div>
+                <div class="crop-option">
+                  <span class="material-icons crop-icon">spa</span>
+                  <div>Corn</div>
+                </div>
+              </div>
+              <form class="smart-form">
+                <div class="form-group">
+                  <label class="form-label">Quantity (kg)</label>
+                  <input type="number" class="form-input" placeholder="Enter quantity">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Price per kg (₹)</label>
+                  <input type="number" class="form-input" placeholder="Enter price">
+                </div>
+                <div class="image-upload">
+                  <span class="material-icons">cloud_upload</span>
+                  <p>Upload crop photos</p>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Market Trends Card -->
+          <div class="card trend-card">
+            <div class="trend-header">
+              <h3>Market Trends</h3>
+              <div class="trend-filters">
+                <button class="filter-button active">Week</button>
+                <button class="filter-button">Month</button>
+                <button class="filter-button">Year</button>
+              </div>
+            </div>
+            <canvas id="trendChart"></canvas>
+          </div>
+
+          <!-- Recent Sales Card -->
+          <div class="card sales-card">
+            <h3>Recent Sales</h3>
+            <div class="sales-list">
+              <div class="sale-item">
+                <div>Rice</div>
+                <div>100 kg</div>
+                <div>₹45/kg</div>
+                <div>2 days ago</div>
+              </div>
+              <div class="sale-item">
+                <div>Wheat</div>
+                <div>150 kg</div>
+                <div>₹35/kg</div>
+                <div>5 days ago</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html> 

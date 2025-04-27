@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app-container">
+      
+      <nav class="sidebar">
+        <div class="sidebar-header">
+          <h2>Farmer Dashboard</h2>
+        </div>
+        <ul class="sidebar-menu">
+          <li class="active">
+            <a href="#dashboard">
+              <span class="icon material-icons">dashboard</span>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#crops">
+              <span class="icon material-icons">grass</span>
+              <span>Marketplace</span>
+            </a>
+          </li>
+          <li>
+            <a href="#analytics">
+              <span class="icon material-icons">analytics</span>
+              <span>Analytics</span>
+            </a>
+          </li>
+          <li>
+            <a href="#profile">
+              <span class="icon material-icons">account_circle</span>
+              <span>Profile</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      
+      <main class="main-content">
+        <header class="top-bar">
+          <button class="menu-toggle">
+            <span class="material-icons">menu</span>
+          </button>
+          <h1>Dashboard</h1>
+        </header>
+
+        <div class="dashboard-grid">
+          
+          <div class="card profile-card">
+            <div class="profile-header">
+              <div class="avatar">R</div>
+              <div class="profile-info">
+                <h3>Rahul Mandal</h3>
+                <p>Farmer</p>
+              </div>
+            </div>
+            <div class="profile-details">
+              <p><strong>Total Land:</strong> 50 acres</p>
+              <p><strong>Location:</strong> Jaipur</p>
+            </div>
+          </div>
+
+          
+          <div class="card chart-card">
+            <h3>Crop Distribution</h3>
+            <div class="chart-container">
+              <canvas id="cropChart"></canvas>
+            </div>
+          </div>
+
+         
+          <div class="card stats-card">
+            <h3>Quick Stats</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <p>Total Crops</p>
+                <h4>3</h4>
+              </div>
+              <div class="stat-item">
+                <p>Active Fields</p>
+                <h4>5</h4>
+                <div class="fields-list">
+                  <div class="field-item">
+                    <div class="crop">Rice</div>
+                    <div class="status">Growing</div>
+                  </div>
+                  <div class="field-item">
+                    <div class="crop">Wheat</div>
+                    <div class="status">Growing</div>
+                  </div>
+                  <div class="field-item">
+                    <div class="crop">Corn</div>
+                    <div class="status">Growing</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card sales-card">
+            <h3>Recent Sales</h3>
+            <div class="sales-list" id="salesList">
+              
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html> 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="logout.php"rel="">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .welcome {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .logout {
+            color: #fff;
+            background: #d9534f;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .logout:hover {
+            background: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome" id="welcome-message">Welcome!</div>
+    <a href="logout.php" class="logout">Logout</a>
+
+    <script>
+        // Display username from session
+        document.getElementById('welcome-message').textContent += 
+            ' ' + (localStorage.getItem('username') || 'User');
+    </script>
+</body>
+</html>

@@ -1,0 +1,405 @@
+:root {
+    --primary-color: #2e7d32;
+    --secondary-color: #ffa726;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: white;
+    box-shadow: var(--card-shadow);
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar-header h2 {
+    color: var(--primary-color);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 5px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(46, 125, 50, 0.1);
+}
+
+.sidebar-menu .active a {
+    background-color: rgba(46, 125, 50, 0.1);
+    color: var(--primary-color);
+}
+
+.sidebar-menu .icon {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: var(--card-shadow);
+    border-radius: 4px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    flex: 1;
+    min-width: 200px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-button.sell {
+    background-color: var(--primary-color);
+}
+
+.action-button.listings {
+    background-color: #1976d2;
+}
+
+.action-button.sales {
+    background-color: #f57c00;
+}
+
+.action-button.trends {
+    background-color: #7b1fa2;
+}
+
+.action-icon {
+    font-size: 24px;
+}
+
+/* Listing Wizard */
+.listing-wizard {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wizard-progress {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.wizard-progress::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #eee;
+    z-index: 1;
+}
+
+.wizard-step {
+    position: relative;
+    z-index: 2;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #eee;
+}
+
+.wizard-step.active {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+.wizard-step.completed {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Crop Selection Grid */
+.crop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.crop-option {
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.crop-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.crop-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(46, 125, 50, 0.1);
+}
+
+.crop-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Smart Form */
+.smart-form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.form-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-label {
+    position: absolute;
+    left: 12px;
+    top: -8px;
+    background: white;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Image Upload */
+.image-upload {
+    border: 2px dashed #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.preview-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Market Trends */
+.trend-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.trend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.trend-filters {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-button {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background: none;
+    cursor: pointer;
+}
+
+.filter-button.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Chart Container */
+.trend-card canvas {
+    flex: 1;
+    min-height: 0;
+    max-height: 300px;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Sales List */
+.sales-list {
+    margin-top: 15px;
+}
+
+.sale-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.sale-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-actions {
+        flex-direction: column;
+    }
+    
+    .action-button {
+        width: 100%;
+    }
+    
+    .crop-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .trend-filters {
+        flex-wrap: wrap;
+    }
+} 
